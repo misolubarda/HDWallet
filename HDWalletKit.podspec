@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'HDWalletKit'
-  s.version          = '0.3.6'
+  s.version          = '0.3.7'
   s.summary          = 'Hierarchical Deterministic(HD) wallet for cryptocurrencies in Swift'
   
   s.description      = <<-DESC
@@ -21,7 +21,9 @@ Pod::Spec.new do |s|
   s.module_name   = "HDWalletKit"
   s.source_files = 'HDWalletKit/**/*.{swift}'
 
-  s.dependency 'secp256k1.swift', '~> 0.1.4'
+  s.dependency 'secp256k1.swift', '~> 0.1.5'
   s.dependency 'CryptoSwift', '~> 1.0.0'
+
+  s.source = { :git => "https://github.com/misolubarda/secp256k1.swift.git", :tag => "0.1.5" }
   
 end

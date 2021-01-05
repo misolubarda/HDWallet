@@ -59,6 +59,11 @@ public struct PrivateKey {
         self.coin = coin
         self.keyType = .nonHd
     }
+
+    public init?(hdData: Data) {
+        guard hdData.count == 64 else { return nil }
+        self.init(privateKey: hdData[0..<32], chainCode: hdData[32..<64], index: 0, coin: .bitcoin)
+    }
     
     private init(privateKey: Data, chainCode: Data, index: UInt32, coin: Coin) {
         self.raw = privateKey
@@ -67,7 +72,9 @@ public struct PrivateKey {
         self.coin = coin
         self.keyType = .hd
     }
-    
+
+    public var hdData: Data { raw + chainCode }
+
     public var publicKey: PublicKey {
         return PublicKey(privateKey: raw, coin: coin)
     }
