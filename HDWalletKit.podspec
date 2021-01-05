@@ -23,7 +23,5 @@ Pod::Spec.new do |s|
 
   s.dependency 'secp256k1.swift', '~> 0.1.5'
   s.dependency 'CryptoSwift', '~> 1.0.0'
-
-  s.source = { :git => "https://github.com/misolubarda/secp256k1.swift.git", :tag => "0.1.5" }
   
 end
